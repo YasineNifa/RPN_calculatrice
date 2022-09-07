@@ -1,0 +1,39 @@
+{% load static %}
+{% for stack in stacks %}
+<div class="roomListRoom">
+    <div class="roomListRoom__header">
+        <a href="{% url 'stack' stack.id %}" class="roomListRoom__author">
+            <div class="avatar avatar--small">
+                <img src="{% static 'images/avatar.svg' %}" />
+            </div>
+            <p>@Yassine</p>
+            <a href="{% url 'delete-stack' stack.id %}">Delete</a>
+            <span>{{stack.name}}</span>
+        </a>
+        <div class="roomListRoom__actions">
+            <span>{{stack.created|timesince}} ago</span>
+        </div>
+    </div>
+    <div class="roomListRoom__content">
+        
+        <a href="{% url 'stack' stack.id %}">{{stack.name}}</a>
+        <p> - {{stack.description}} - </p>
+    </div>
+    <div>
+        <h5>{{stack.body}} =========> {{stack.content}}</h5>
+    </div>
+    <div class="roomListRoom__meta">
+        <div class="roomListStackOperation__meta">
+            <p>List of all operations</p>
+            <ul>
+            {% for operation in stack.operation_set.all%}
+                <li>
+                    {{operation.action}}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <p class="roomListRoom__topic">{{stack.name}}</p>
+    </div>
+</div>
+{% endfor %}

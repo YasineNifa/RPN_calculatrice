@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<div class="stack__container">
+    <div class="stack__container__text">
+        <p class="stack__container__name">{{stack.name}}</p>
+        <p class="stack__container__description">{{stack.description}}</p>
+        <p class="stack__container__body">{{stack.body}}</p>
+    </div>
+
+    <div class="wrapper">
+        <h3>Calculations</h3>
+        <hr class="wrapper__hr">
+        <div class="wrapper__content">
+            <div class="comment-form">
+                <form method="POST" action="">
+                    {%csrf_token%}
+                    <input class="input" type="text" name="body" placeholder="Write your operation ..."/>
+
+                </form>
+            </div>
+        
+            {% for operation in stack_operations%}
+            <div class="stack_operation_list">
+                <div class="stack_operation_item">
+                    <small> {{operation.created |timesince}} ago</small>
+                    <h1 class="val">Old: <span>{{operation.old}}</span></h1>
+                    <h1 class="val">Action: <span>{{operation.action}}</span></h1>
+                    <h1 class="val">Result: <span>{{operation.new}}</span></h1>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

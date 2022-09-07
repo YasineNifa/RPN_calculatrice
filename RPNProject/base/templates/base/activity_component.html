@@ -1,0 +1,28 @@
+{% load static %}
+<div class="activities">
+    <div class="activities__header">
+        <h2>Recent Activities</h2>
+    </div>
+    {% for message in stack_operations %}
+    <div class="activities__box">
+        <div class="activities__boxHeader roomListRoom__header">
+            <a href="" class="roomListRoom__author">
+                <div class="avatar avatar--small">
+                    <img src="{% static 'images/avatar.svg' %}" />
+                </div>
+                <p>
+                    @Yassine
+                    <span>{{message.created|timesince}} ago</span>
+                </p>
+            </a>
+
+
+        </div>
+        <div class="activities__boxContent">
+            <p>Operation in Stack : <a href="{% url 'stack' message.stackmodel.id %}">{{message.stackmodel.name}}</a></p>
+            <div class="activities__boxRoomContent">{{message.action}}</div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
