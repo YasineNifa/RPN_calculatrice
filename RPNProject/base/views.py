@@ -90,8 +90,11 @@ def stack(request, pk):
             liste = operation.new.split(',')
             res = ','.join(map(str, div(liste)))
         elif operation.body.replace('-','').isdigit():
-            operation.action = "Push a New Number " + operation.body 
-            res = operation.new + ',' + operation.body
+            operation.action = "Push a New Number " + operation.body
+            if operation.new != '':
+                res = operation.new + ',' + operation.body
+            else:
+                res = operation.body
         else:
             operation.action = "Can you please add a digit or an operand ? Thx"
             res = operation.new
