@@ -1,11 +1,13 @@
 # RPN_calculatrice
 
-### Link of the application:
+## Link of the application:
 
 - The application is hosted using the pythonanywhere hosting services
 - The link to the application: http://ynifa.pythonanywhere.com/
 
-### Description of the application:
+## Description of the application:
+
+### Home Page
 
 In the first page of the application, the user can :
 <ol>
@@ -29,3 +31,15 @@ In the first page of the application, the user can :
 
 
 ![firstPage](https://user-images.githubusercontent.com/34387336/188941868-6f178913-db0f-4d82-af99-0ed2a53988f4.JPG)
+
+
+
+### Stack Page
+
+<ol>
+<li>We can display all the informations about the stack : name, description and content </li>
+<li>We can apply a new operation on the stack</li>
+</ol>
+
+![cap2](https://user-images.githubusercontent.com/34387336/188944849-ac3f05ba-8533-4d8f-922c-4b1f1982d17b.JPG)
+
