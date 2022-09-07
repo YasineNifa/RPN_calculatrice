@@ -32,6 +32,11 @@ In the first page of the application, the user can :
 
 ![firstPage](https://user-images.githubusercontent.com/34387336/188941868-6f178913-db0f-4d82-af99-0ed2a53988f4.JPG)
 
+### Create New Stack
+- we need to fill the form to create a new stack
+- For the body field, it must respect this syntax: 10,5,6 
+
+![cap3](https://user-images.githubusercontent.com/34387336/188945427-f5618aab-9463-4080-8cbc-0c6718b6eced.JPG)
 
 
 ### Stack Page
