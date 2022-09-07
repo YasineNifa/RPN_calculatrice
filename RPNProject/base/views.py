@@ -89,7 +89,7 @@ def stack(request, pk):
             operation.action = "Division Operation"
             liste = operation.new.split(',')
             res = ','.join(map(str, div(liste)))
-        elif operation.body.isdigit():
+        elif operation.body.replace('-','').isdigit():
             operation.action = "Push a New Number " + operation.body 
             res = operation.new + ',' + operation.body
         else:
